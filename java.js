@@ -1,11 +1,7 @@
-let movie1 = prompt("Filmin adını daxil et: ");
 fetch(
-    `https://dummyapi.online/api/movies?q=${movie1}`
+    `https://dummyapi.online/api/movies`
 ).then((res) =>
-   res.json().then((data) => {
-       console.log(data);
-        console.log(
-            `${movie1}: ${data.movie} `
-        );
+    res.json().then((data) => {
+        data.map(d=>{console.log(d.movie)});
+       
     }));
-
